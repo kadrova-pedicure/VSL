@@ -131,6 +131,10 @@
       display: none;
     }
 
+    .mobile-hero-photo {
+      display: none;
+    }
+
     .topbar,
     .hero-body {
       position: relative;
@@ -865,51 +869,79 @@
       }
 
       .hero {
-        min-height: 94svh;
-        background:
-          url("assets/author-hero-wide.png") 68% center / cover no-repeat;
+        min-height: auto;
+        background: linear-gradient(180deg, #fbf6f1 0%, #f7f1ec 100%);
       }
 
       .hero::before {
         background:
-          linear-gradient(180deg, rgba(251, 246, 241, 0.98) 0%, rgba(251, 246, 241, 0.88) 48%, rgba(251, 246, 241, 0.58) 72%, rgba(251, 246, 241, 0.28) 100%);
+          linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0) 42%);
       }
 
       .topbar {
         top: 12px;
-        width: min(100% - 24px, 680px);
-        padding: 10px 12px;
-        gap: 10px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        transform: none;
+        padding: 8px 10px;
+        gap: 8px;
       }
 
       .brand {
         gap: 8px;
-        font-size: 12px;
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: 11px;
       }
 
       .top-cta {
-        min-height: 42px;
-        padding: 0 14px;
-        font-size: 14px;
-        white-space: nowrap;
+        display: none;
+      }
+
+      .mobile-hero-photo {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: min(calc(100% - 28px), 460px);
+        aspect-ratio: 4 / 5;
+        margin: 86px auto 24px;
+        border-radius: 26px;
+        object-fit: cover;
+        object-position: center top;
+        box-shadow: 0 22px 58px rgba(76, 45, 38, 0.16);
       }
 
       .hero-body {
-        min-height: calc(94svh - 72px);
-        padding: 104px 0 42px;
+        min-height: auto;
+        padding: 0 0 42px;
+      }
+
+      .hero-copy,
+      .hero-lead {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero-lead {
+        max-width: 340px;
       }
 
       .hero h1 {
-        font-size: clamp(48px, 15vw, 70px);
+        max-width: 100%;
+        font-size: clamp(42px, 12vw, 56px);
+        overflow-wrap: anywhere;
       }
 
       .hero-subtitle {
-        font-size: 22px;
+        font-size: 20px;
+        line-height: 1.16;
       }
 
       .hero-lead,
       .lead {
         font-size: 17px;
+        overflow-wrap: break-word;
       }
 
       .hero-proof,
@@ -991,6 +1023,8 @@
       </nav>
       <a class="top-cta" href="https://monecle.com/buy/95422">Купить курс</a>
     </div>
+
+    <img class="mobile-hero-photo" src="assets/author-hero-portrait-v2.png" alt="Кадрова В.В. в студии">
 
     <div class="shell hero-body">
       <div class="hero-copy">
